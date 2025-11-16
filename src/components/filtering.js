@@ -19,15 +19,6 @@ export function initFiltering(elements, indexes) {
      })
 
     return (data, state, action) => {
-        // @todo: #4.2 — обработать очистку поля
-        /* if (action.target.tagName === 'button' && action.target.textContent === 'clear') {
-            action.target.parrentElement.children.forEach(element => {
-                if (element.tagName === 'input') {
-                    element.value = '';
-                }
-            })
-        } */
-        // @todo: #4.5 — отфильтровать данные используя компаратор
         return data.filter(row => compare(row, state));
     }
 }
