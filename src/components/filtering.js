@@ -13,6 +13,11 @@ export function initFiltering(elements) {
   };
 
   const applyFiltering = (query, state, action) => {
+    if (action && action.name === "clear") {
+      action.parentElement.querySelectorAll("input").forEach((input) => {
+        input.value = "";
+      });
+    }
     const filter = {};
     Object.keys(elements).forEach((key) => {
       if (elements[key]) {
